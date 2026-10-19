@@ -1,0 +1,193 @@
+/* ==========================================================================
+   Tickerly documentation theme
+   Brand: #DD9828 orange · #FCF9F2 beige · #30393D dark
+   ========================================================================== */
+
+:root {
+  --tk-orange:        #DD9828;  /* brand orange — accents, rules, highlights */
+  --tk-orange-deep:   #9B6918;  /* darkened orange — link text on beige (4.5:1) */
+  --tk-orange-soft:   #F3E4C8;  /* tinted orange — table headers, borders */
+  --tk-white:         #FFFFFF;  /* reading surface — main content background */
+  --tk-beige:         #FCF9F2;  /* brand beige — header, code blocks */
+  --tk-beige-sunk:    #F4EFE4;  /* a step down from beige — table heads */
+  --tk-dark:          #30393D;  /* brand dark — body text, dark surfaces */
+  --tk-dark-deep:     #23292C;  /* below dark — dark-mode page background */
+  --tk-dark-soft:     #4A555A;  /* muted dark — secondary text */
+}
+
+/* --------------------------------------------------------------------------
+   Light scheme — mirrors the beige/dark look of tickerly.net
+   -------------------------------------------------------------------------- */
+
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color:        var(--tk-beige);   /* header background */
+  --md-primary-bg-color:        var(--tk-dark);    /* header text and icons */
+  --md-primary-bg-color--light: var(--tk-dark-soft);
+
+  --md-accent-fg-color:         var(--tk-orange);
+  --md-typeset-a-color:         var(--tk-orange-deep);
+
+  --md-default-bg-color:        var(--tk-white);
+  --md-default-fg-color:        var(--tk-dark);
+  --md-default-fg-color--light: var(--tk-dark-soft);
+
+  --md-code-bg-color:           var(--tk-beige);
+  --md-footer-bg-color:         var(--tk-dark);
+  --md-footer-bg-color--dark:   var(--tk-dark-deep);
+}
+
+[data-md-color-scheme="default"] .md-header {
+  border-bottom: 1px solid var(--tk-orange-soft);
+  box-shadow: none;
+}
+
+[data-md-color-scheme="default"] .md-search__form {
+  background-color: rgba(48, 57, 61, 0.06);
+}
+
+[data-md-color-scheme="default"] .md-search__form:hover {
+  background-color: rgba(48, 57, 61, 0.12);
+}
+
+[data-md-color-scheme="default"] .md-tabs {
+  background-color: var(--tk-beige);
+  color: var(--tk-dark);
+}
+
+/* --------------------------------------------------------------------------
+   Dark scheme
+   -------------------------------------------------------------------------- */
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color:  var(--tk-dark);
+  --md-primary-bg-color:  var(--tk-beige);
+  --md-accent-fg-color:   var(--tk-orange);
+  --md-typeset-a-color:   var(--tk-orange);
+  --md-default-bg-color:  var(--tk-dark-deep);
+  --md-footer-bg-color:   var(--tk-dark);
+}
+
+[data-md-color-scheme="slate"] .md-header {
+  border-bottom: 1px solid rgba(221, 152, 40, 0.25);
+}
+
+/* --------------------------------------------------------------------------
+   Typography
+   -------------------------------------------------------------------------- */
+
+.md-typeset h1,
+.md-typeset h2 {
+  font-weight: 650;
+  letter-spacing: -0.015em;
+  color: var(--md-default-fg-color);
+}
+
+.md-typeset h2 {
+  margin-top: 2.2em;
+  padding-top: 0.6em;
+  border-top: 1px solid var(--tk-orange-soft);
+}
+
+[data-md-color-scheme="slate"] .md-typeset h2 {
+  border-top-color: rgba(221, 152, 40, 0.22);
+}
+
+.md-typeset h1 + h2,
+.md-typeset h2:first-child {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 1em;
+}
+
+.md-typeset h3 { font-weight: 600; }
+
+/* --------------------------------------------------------------------------
+   Tables — the field and capability matrices carry a lot of this site
+   -------------------------------------------------------------------------- */
+
+.md-typeset table:not([class]) {
+  font-size: 0.75rem;
+  border: 1px solid var(--tk-orange-soft);
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) {
+  border-color: rgba(221, 152, 40, 0.22);
+}
+
+.md-typeset table:not([class]) th {
+  background: var(--tk-beige-sunk);
+  color: var(--tk-dark);
+  font-weight: 650;
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) th {
+  background: var(--tk-dark);
+  color: var(--tk-beige);
+}
+
+.md-typeset table:not([class]) td:first-child code { white-space: nowrap; }
+
+/* --------------------------------------------------------------------------
+   Code
+   -------------------------------------------------------------------------- */
+
+.md-typeset pre > code { border-radius: 4px; }
+.md-typeset code { font-size: 0.85em; }
+.md-typeset a > code { color: inherit; }
+
+/* --------------------------------------------------------------------------
+   Admonitions — flatter than default, brand orange on notes and tips
+   -------------------------------------------------------------------------- */
+
+.md-typeset .admonition,
+.md-typeset details {
+  border-width: 0 0 0 3px;
+  border-radius: 3px;
+  box-shadow: none;
+  font-size: 0.75rem;
+}
+
+.md-typeset .admonition.tip,
+.md-typeset .admonition.note { border-left-color: var(--tk-orange); }
+
+.md-typeset .tip > .admonition-title,
+.md-typeset .note > .admonition-title {
+  background-color: rgba(221, 152, 40, 0.12);
+}
+
+.md-typeset .tip > .admonition-title::before,
+.md-typeset .note > .admonition-title::before {
+  background-color: var(--tk-orange);
+}
+
+/* --------------------------------------------------------------------------
+   Logo and navigation
+   -------------------------------------------------------------------------- */
+
+.md-header__button.md-logo img { height: 1.5rem; width: auto; }
+.md-nav__item .md-nav__link--active { font-weight: 650; }
+.md-nav__title { font-weight: 650; }
+
+/* --------------------------------------------------------------------------
+   OPTIONAL — content column as a white card on a beige page.
+   Uncomment this block to get beige margins with a white reading surface,
+   instead of an all-white page.
+   -------------------------------------------------------------------------- */
+
+/*
+[data-md-color-scheme="default"] {
+  --md-default-bg-color: var(--tk-beige);
+}
+
+[data-md-color-scheme="default"] .md-content {
+  background: var(--tk-white);
+  border: 1px solid var(--tk-orange-soft);
+  border-radius: 4px;
+  margin-bottom: 2rem;
+}
+
+[data-md-color-scheme="default"] .md-content__inner {
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+}
+*/

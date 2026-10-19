@@ -1,0 +1,90 @@
+site_name: Tickerly Documentation
+site_description: Technical reference for automating TradingView strategies with Tickerly.
+site_url: https://mistahcase.github.io/tickerly-docs/
+
+theme:
+  name: material
+  logo: assets/logo.png
+  favicon: assets/favicon.png
+  font:
+    text: Poppins             # Best guess from the site — change if wrong
+    code: JetBrains Mono
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - toc.follow
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - content.tabs.link
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+extra_css:
+  - assets/stylesheets/tickerly.css
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/dUe9tyW2aK
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/@tickerlybot
+    - icon: fontawesome/solid/globe
+      link: https://tickerly.net
+
+nav:
+  - Home: index.md
+  - Exchange connections:
+      - Overview: exchanges/index.md
+      - API keys and permissions: exchanges/api-keys.md
+      - Credential fields: exchanges/credentials.md
+      - Demo and test accounts: exchanges/demo-accounts.md
+      - Position mode: exchanges/position-mode.md
+      - Supported exchanges: exchanges/supported.md
+  - MetaTrader:
+      - Overview: metatrader/index.md
+      - The connector: metatrader/connector.md
+      - Differences from direct connections: metatrader/differences.md
+  - The alert message:
+      - Overview: alerts/index.md
+      - Field reference: alerts/fields.md
+      - Entries, exits and positions: alerts/positions.md
+      - Ticker formats: alerts/tickers.md
+      - Choosing an alert type: alerts/choosing.md
+  - Alert types:
+      - Standard: alerts/types/standard.md
+      - Swing: alerts/types/swing.md
+      - Hedge mode: alerts/types/hedge-mode.md
+      - Full trade: alerts/types/full-trade.md
+      - Directional: alerts/types/directional.md
+      - Close all: alerts/types/close-all.md
+
+# Remaining sections to be added:
+#   - Monitoring
+#   - Errors
+#   - Reference

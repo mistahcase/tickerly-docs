@@ -1,0 +1,5 @@
+# Pinned deliberately. MkDocs 2.0 is a breaking rewrite that removes the
+# plugin system and theme overrides, with no migration path. Do not move to
+# mkdocs>=2 without testing the whole site first.
+mkdocs==1.6.1
+mkdocs-material==9.7.6
