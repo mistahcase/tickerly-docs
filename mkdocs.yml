@@ -1,6 +1,6 @@
 site_name: Tickerly Documentation
 site_description: Technical reference for automating TradingView strategies with Tickerly.
-site_url: https://mistahcase.github.io/tickerly-docs/
+site_url: https://docs.tickerly.net/
 
 theme:
   name: material
